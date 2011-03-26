@@ -101,6 +101,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    'pagination.middleware.PaginationMiddleware',
 )
 
 ROOT_URLCONF = 'dawsoning.urls'
@@ -123,6 +125,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'django.contrib.flatpages',
+    'django.contrib.comments',
+    'jellyroll',
+    'basic.blog',
+    'pagination',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -147,3 +154,11 @@ LOGGING = {
         },
     }
 }
+
+JELLYROLL_PROVIDERS = (
+    'jellyroll.providers.youtube',
+    'jellyroll.providers.flickr',
+    'jellyroll.providers.twitter',
+)
+
+PAGINATION_DEFAULT_WINDOW = 2

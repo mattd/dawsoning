@@ -16,7 +16,9 @@ setup(
     install_requires=[
         'Django',
         'jellyroll',
+        'django-pagination',
         'feedparser',
+        'docutils',
     ],
     tests_require='nose',
     test_suite='nose.collector',
